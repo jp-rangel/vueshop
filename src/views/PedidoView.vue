@@ -19,6 +19,12 @@ function confirmarPedido() {
   carritoStore.vaciarCarrito()
   pedidoConfirmado.value = true
 }
+
+function rutaImagen(ruta) {
+  return ruta
+    ? `${import.meta.env.BASE_URL}${ruta.replace(/^\/+/, '')}`
+    : ''
+}
 </script>
 
 <template>
@@ -55,7 +61,7 @@ function confirmarPedido() {
             <div class="order-item-image">
               <img
                 v-if="producto.imagen"
-                :src="producto.imagen"
+                :src="rutaImagen(producto.imagen)"
                 :alt="producto.nombre"
               />
               <span v-else>✦</span>

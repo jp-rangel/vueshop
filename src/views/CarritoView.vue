@@ -9,6 +9,12 @@ function formatoPrecio(precio) {
     currency: 'MXN'
   })
 }
+
+function rutaImagen(ruta) {
+  return ruta
+    ? `${import.meta.env.BASE_URL}${ruta.replace(/^\/+/, '')}`
+    : ''
+}
 </script>
 
 <template>
@@ -29,7 +35,7 @@ function formatoPrecio(precio) {
           <div class="cart-item-image">
             <img
               v-if="producto.imagen"
-              :src="producto.imagen"
+              :src="rutaImagen(producto.imagen)"
               :alt="producto.nombre"
             />
             <span v-else>✦</span>

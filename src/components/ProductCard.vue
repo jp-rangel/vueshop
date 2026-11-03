@@ -11,6 +11,12 @@ defineProps({
 defineEmits(['editar', 'eliminar'])
 
 const carritoStore = useCarritoStore()
+
+function rutaImagen(ruta) {
+  return ruta
+    ? `${import.meta.env.BASE_URL}${ruta.replace(/^\/+/, '')}`
+    : ''
+}
 </script>
 
 <template>
@@ -18,7 +24,7 @@ const carritoStore = useCarritoStore()
     <div class="product-card-image">
       <img
         v-if="producto.imagen"
-        :src="producto.imagen"
+        :src="rutaImagen(producto.imagen)"
         :alt="producto.nombre"
       />
 
