@@ -12,7 +12,13 @@ defineEmits(['editar', 'eliminar'])
 <template>
   <article class="product-card">
     <div class="product-card-image">
-      <span class="product-placeholder">✦</span>
+        <img
+            v-if="producto.imagen"
+            :src="producto.imagen"
+            :alt="producto.nombre"
+        />
+
+        <span v-else class="product-placeholder">✦</span>
     </div>
 
     <div class="product-card-content">

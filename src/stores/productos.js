@@ -6,25 +6,29 @@ const productosIniciales = [
     id: 1,
     nombre: 'Audífonos inalámbricos',
     descripcion: 'Audífonos Bluetooth con cancelación de ruido.',
-    precio: 599.99
+    precio: 599.99,
+    imagen: '/productos/audifonos.jpg'
   },
   {
     id: 2,
     nombre: 'Teclado mecánico',
     descripcion: 'Teclado mecánico con iluminación RGB.',
-    precio: 899.00
+    precio: 899.00,
+    imagen: '/productos/teclado-mecanico.jpg'
   },
   {
     id: 3,
     nombre: 'Mouse gamer',
     descripcion: 'Mouse ergonómico con sensor de alta precisión.',
-    precio: 449.50
+    precio: 449.50,
+    imagen: '/productos/mouse-gamer.jpg'
   },
   {
     id: 4,
     nombre: 'Monitor Full HD',
     descripcion: 'Monitor de 24 pulgadas con resolución Full HD.',
-    precio: 2499.00
+    precio: 2499.00,
+    imagen: '/productos/monitor.jpg'
   }
 ]
 
