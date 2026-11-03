@@ -58,7 +58,6 @@ function eliminarProducto(id) {
 
     <!-- Lista de productos -->
     <section class="products-grid" v-if="productosStore.totalProductos > 0">
-
       <ProductCard
         v-for="producto in productosStore.productos"
         :key="producto.id"
@@ -66,7 +65,6 @@ function eliminarProducto(id) {
         @editar="editarProducto"
         @eliminar="eliminarProducto"
       />
-
     </section>
 
     <!-- Estado vacío -->

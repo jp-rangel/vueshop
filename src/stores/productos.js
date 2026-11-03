@@ -52,17 +52,14 @@ function cargarProductos() {
 }
 
 export const useProductosStore = defineStore('productos', {
-  // Estado global
   state: () => ({
     productos: cargarProductos()
   }),
 
-  // Propiedades calculadas
   getters: {
     totalProductos: (state) => state.productos.length
   },
 
-  // Operaciones sobre los productos
   actions: {
     guardarProductos() {
       localStorage.setItem(
