@@ -1,4 +1,6 @@
 <script setup>
+import { useCarritoStore } from '../stores/carrito'
+
 defineProps({
   producto: {
     type: Object,
@@ -7,18 +9,20 @@ defineProps({
 })
 
 defineEmits(['editar', 'eliminar'])
+
+const carritoStore = useCarritoStore()
 </script>
 
 <template>
   <article class="product-card">
     <div class="product-card-image">
-        <img
-            v-if="producto.imagen"
-            :src="producto.imagen"
-            :alt="producto.nombre"
-        />
+      <img
+        v-if="producto.imagen"
+        :src="producto.imagen"
+        :alt="producto.nombre"
+      />
 
-        <span v-else class="product-placeholder">✦</span>
+      <span v-else class="product-placeholder">✦</span>
     </div>
 
     <div class="product-card-content">
@@ -38,6 +42,13 @@ defineEmits(['editar', 'eliminar'])
           }}
         </strong>
       </div>
+
+      <button
+        class="add-cart-button"
+        @click="carritoStore.agregarAlCarrito(producto)"
+      >
+        Añadir al carrito
+      </button>
 
       <div class="product-card-actions">
         <button

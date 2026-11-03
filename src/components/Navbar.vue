@@ -1,7 +1,9 @@
 <script setup>
 import { ref } from 'vue'
+import { useCarritoStore } from '../stores/carrito'
 
 const menuAbierto = ref(false)
+const carritoStore = useCarritoStore()
 </script>
 
 <template>
@@ -42,7 +44,9 @@ const menuAbierto = ref(false)
         @click="menuAbierto = false"
       >
         Carrito
-        <span class="cart-badge">0</span>
+        <span class="cart-badge">
+        {{ carritoStore.cantidadProductos }}
+        </span>
       </router-link>
     </nav>
   </header>
