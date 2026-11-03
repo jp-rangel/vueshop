@@ -369,6 +369,26 @@ button {
   justify-content: center;
 }
 
+.nav-link.router-link-active {
+  color: var(--primary);
+}
+
+.page-content {
+  min-height: 65vh;
+  padding: 70px 0;
+}
+
+.page-content h1 {
+  margin: 15px 0;
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(32px, 5vw, 48px);
+}
+
+.page-content p {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
 @media (max-width: 800px) {
   .app-container {
     padding: 0 5%;
